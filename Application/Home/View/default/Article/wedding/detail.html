@@ -1,0 +1,38 @@
+<extend name="Base/wedding"/>
+<block name="headerCss">
+	<link href="__JS__/pro/wedding-detail/detail.css" rel="stylesheet">
+</block>
+<block name="headerJs">
+	<script type="text/javascript" src="__JS__/pro/wedding-detail/detail.js" ></script>
+</block>
+<block name="body">
+	<div id="wrapper" style="display:none;">
+		<div class="page active" id="page1">
+			<div class="page-wrapper">
+				<div class="img-back"></div>
+				<div class="up-arrow"><i></i><i></i></div>
+			</div>
+		</div>
+		<div class="page" id="page2">
+		</div>
+	</div>
+
+	<script>
+		var height = $(window).height();
+		$("#wrapper").css("height",height);
+		$(".page").css('top',height);
+		$(".page.active").css('top','0');
+		// setTimeout(Wedding.rise("page1","page2"), 2000);
+		var initPage = function(){
+			$("#wrapper #page1 .img-back").css('background', 'url("{$info.cover_id|get_cover=\'path\'}")');
+
+		};
+		initPage();
+	</script>
+</block>
+
+<block name="test1">
+	<div id="test_wrapper">
+		{$info|dump}
+	</div>
+</block>

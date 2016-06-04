@@ -1,0 +1,100 @@
+[ 2016-04-12T20:50:08+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 74 LIMIT 1   [ RunTime:0.0050s ]
+SQL: UPDATE `yershop_document` SET `title`='联想（Lenovo）小新V2000 Bigger版 15.6英寸笔记本电脑全高清屏',`cover_id`='109',`price`='8787.00',`deadline`='1449705600',`brand`='联想',`sale`='0',`view`='119',`type`='2',`name`='',`description`='',`comment`='0',`create_time`='1438753680',`link_id`='0',`display`='1',`level`='0',`pid`='0',`model_id`='9',`category_id`='145',`root`='0',`update_time`='1460465408',`status`='1',`position`='0' WHERE `id` = 74 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_groupbuying` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('9','1')  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_groupbuying` SET `content`='<img alt=\"\" src=\"http://img20.360buyimg.com/vc/jfs/t349/285/1951733059/183818/4d59d3b7/5448ca12N610faac0.jpg\" height=\"845\" width=\"750\" />',`market_price`='56765' WHERE `id` = 74 [ RunTime:0.0000s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.006000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+
+[ 2016-04-12T20:51:01+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 74 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_document` SET `title`='联想（Lenovo）小新V2000 Bigger版 15.6英寸笔记本电脑全高清屏',`cover_id`='109',`price`='8787.00',`deadline`='1460505600',`brand`='联想',`sale`='12',`view`='121',`type`='2',`name`='',`description`='',`comment`='0',`create_time`='1438753680',`link_id`='0',`display`='1',`level`='0',`pid`='0',`model_id`='9',`category_id`='145',`root`='0',`update_time`='1460465461',`status`='1',`position`='0' WHERE `id` = 74 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_groupbuying` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('9','1')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_groupbuying` SET `content`='<img alt=\"\" src=\"http://img20.360buyimg.com/vc/jfs/t349/285/1951733059/183818/4d59d3b7/5448ca12N610faac0.jpg\" height=\"845\" width=\"750\" />',`market_price`='56765' WHERE `id` = 74 [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.003000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+
+[ 2016-04-12T21:03:16+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yershop_document` (`title`,`cover_id`,`price`,`deadline`,`brand`,`sale`,`view`,`type`,`name`,`description`,`comment`,`create_time`,`link_id`,`display`,`level`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('Test','161','102','1461330120','CCB','12','0','2','','','0','1460466196','0','1','0','0','0','9','145','1','0','0','0','1460466196','1','0') [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yershop_document_groupbuying` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0070s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('9','1')  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: INSERT INTO `yershop_document_groupbuying` (`content`,`market_price`,`id`) VALUES ('qwertyuiop','213','92') [ RunTime:0.0000s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.003001s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'add_document' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-12T21:03:44+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'CCB_Test1' AND `id` <> '92' AND `status` <> -1 AND `category_id` = 145 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 92 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_document` SET `title`='Test',`cover_id`='161',`price`='102.00',`deadline`='1461330120',`brand`='CCB',`sale`='12',`view`='0',`type`='2',`name`='CCB_Test1',`description`='CCB_Test111',`comment`='12',`position`='1',`create_time`='1460466180',`link_id`='0',`display`='1',`level`='0',`pid`='0',`model_id`='9',`category_id`='145',`root`='0',`update_time`='1460466224',`status`='1' WHERE `id` = 92 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_groupbuying` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('9','1')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_groupbuying` SET `content`='qwertyuiop',`market_price`='213' WHERE `id` = 92 [ RunTime:0.0000s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.004001s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.004001s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+

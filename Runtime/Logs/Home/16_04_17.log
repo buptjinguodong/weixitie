@@ -1,0 +1,12 @@
+[ 2016-04-17T10:58:02+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Article/detail/id/96.html
+ERR: 模板不存在:./Application/Home/View/default/Article/detail1.html
+
+[ 2016-04-17T10:58:29+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Article/detail/id/96.html
+ERR: 模板不存在:./Application/Home/View/default/default/detail1.html
+
+[ 2016-04-17T10:58:56+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Article/detail/id/96.html
+ERR: 模板不存在:./Application/Home/View/default/article/detail1.html
+
+[ 2016-04-17T10:59:19+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Article/detail/id/96.html
+ERR: 模板不存在:./Application/Home/View/default/wedding/detail1.html
+

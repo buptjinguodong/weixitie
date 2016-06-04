@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<title>{$meta_title}_{:C('WEB_SITE_TITLE')}</title>
+	<block name="headerCss">
+		<link href="__CSS__/wedding_base.css" rel="stylesheet">
+	</block>
+	<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+	<block name="headerJs">
+		<script type="text/javascript" src="__JS__/wedding.js"></script>
+	</block>
+	<script src="__JS__/pro/touchswipe_1.6.js"></script>
+
+</head>
+<body>
+	<!-- 主体 -->
+	<include file="Public/wedding_body"/>
+	<!-- /主体 -->
+	<include file="Public/test"/>
+</body>
+</html>

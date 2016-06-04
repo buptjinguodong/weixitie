@@ -1,0 +1,71 @@
+body{
+	margin:0;
+	padding:0;
+}
+.main{
+	margin:auto;
+}
+#wrapper{
+	position: relative;
+	overflow: hidden;
+}
+.page{
+	width: 100%;
+	position:absolute;
+	height: 100%;
+	background-color: green;
+}
+.page{
+	transition: top 1s ease 0s;
+}
+.page.active{
+	background-color: blue;
+}
+.page-wrapper{
+	height: 100%;
+}
+.img-back{
+	height: 100%;
+}
+.up-arrow{
+	/*background-color: yellow;*/
+    width: 10px;
+    height: 20px;
+    z-index: 10;
+    position: relative;
+    bottom: 100px;
+    margin: auto;
+    opacity: 1.0;
+}
+.up-arrow{
+	transition: all 1s ease 0s;
+}
+.up-arrow i:first{
+	display:block;
+	border-top: 5px solid;
+	border-left: 5px solid;
+	border-right: none;
+	border-bottom: none;
+}
+.up-arrow i{
+    display: block;
+    border: 2px solid;
+    border-color: beige;
+    width: 10px;
+    height: 10px;
+    border-bottom: 0;
+    border-right: 0;
+    transform: rotate(45deg);
+}
+.up-arrow.active{
+	bottom: 120px;
+	opacity: 0;
+}
+
+
+
+
+
+
+
+

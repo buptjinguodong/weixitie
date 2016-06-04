@@ -1,0 +1,560 @@
+[ 2016-03-24T19:24:38+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined index: lite D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 2 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','2','0','member','2','1458818678','jinguodong在2016-03-24 19:24登录了后台') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 2 AND `create_time` > 1458732278 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0040s ]
+SQL: UPDATE `yershop_member` SET `score`=score+10 WHERE ( uid=2 AND status>-1 ) [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1458818678',`last_login_ip`='0' WHERE `uid` = 2 [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:29:20+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: lite D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0040s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','0','member','1','1458818960','yershop在2016-03-24 19:29登录了后台') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1458732560 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0060s ]
+SQL: UPDATE `yershop_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0030s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1458818960',`last_login_ip`='0' WHERE `uid` = 1 [ RunTime:0.0010s ]
+
+[ 2016-03-24T19:42:26+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yershop_model` (`name`,`title`,`extend`,`engine_type`,`need_pk`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('report','通告','1','InnoDB','1','1458819746','1458819746','1','') [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','15','1458819746','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Controller\ModelController.class.php 第 148 行.
+
+[ 2016-03-24T19:43:04+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Think/edit/model/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Controller\ThinkController::lists() should be compatible with Admin\Controller\AdminController::lists($model, $where = Array, $order = '', $field = true) D:\xampp\htdocs\cms\yershop\Application\Admin\Controller\ThinkController.class.php 第 16 行.
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0070s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` = 1  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document` SET `sale`='10',`brand`='',`name`='',`title`='亲亲自然（第1-4辑合集，共40册，国际化的华文幼儿科普品牌，为3-10岁孩子量身订做的自然教育专书，',`description`='',`type`='2',`link_id`='0',`cover_id`='89',`display`='1',`deadline`='0',`view`='57',`comment`='0',`level`='0',`create_time`='1428674340',`price`='50.00' WHERE `id` = 46 [ RunTime:0.0010s ]
+
+[ 2016-03-24T19:43:26+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/think/lists/model/report.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yershop.yershop_document_report' doesn't exist
+
+[ 2016-03-24T19:46:25+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'title' AND `model_id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('title','标题','string','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','15','1','1458819985','1458819985') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_report'; [ RunTime:0.0020s ]
+SQL: SELECT `engine_type`,`need_pk` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 CREATE TABLE IF NOT EXISTS `yershop_document_report` (
+                `id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+                `title`  varchar(255) NOT NULL  COMMENT '标题' ,
+                PRIMARY KEY (`id`)
+                )
+                ENGINE=InnoDB
+                DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+                CHECKSUM=0
+                ROW_FORMAT=DYNAMIC
+                DELAY_KEY_WRITE=0
+                ; [ RunTime:0.0160s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','129','1458819985','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:49:01+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'content' AND `model_id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('content','内容','textarea','text NOT NULL','','','','1','0','regex','','','3','function','','3','0','15','1','1458820141','1458820141') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_report'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_report`
+ADD COLUMN `content`  text NOT NULL  COMMENT '内容'; [ RunTime:0.0340s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','130','1458820141','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-03-24T19:49:28+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '15' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T19:50:13+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '15' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_model` SET `name`='report',`title`='通告',`extend`='1',`field_group`='1:基础,2:扩展',`field_sort`='{\"1\":[\"129\",\"130\",\"2\",\"3\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+update_time:最后更新
+status:状态
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1458820213' WHERE `id` = 15 [ RunTime:0.0000s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','15','1458820213','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:51:41+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'author' AND `model_id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('author','作者','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','15','1','1458820301','1458820301') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_report'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_report`
+ADD COLUMN `author`  varchar(255) NOT NULL  COMMENT '作者'; [ RunTime:0.0390s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','131','1458820301','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-03-24T19:52:00+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '15' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_model` SET `name`='report',`title`='通告',`extend`='1',`field_group`='1:基础,2:扩展',`field_sort`='{\"1\":[\"129\",\"130\",\"2\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"],\"2\":[\"3\",\"131\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+update_time:最后更新
+status:状态
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1458820320' WHERE `id` = 15 [ RunTime:0.0000s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','15','1458820320','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:52:20+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/think/lists/model/report.html
+ERR: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'title' in field list is ambiguous
+
+[ 2016-03-24T19:53:05+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/remove/id/129.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `id` = 129 LIMIT 1   [ RunTime:0.0010s ]
+SQL: DELETE FROM `yershop_attribute` WHERE `id` = 129 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 15 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_report'; [ RunTime:0.0020s ]
+SQL:             ALTER TABLE `yershop_document_report`
+DROP COLUMN `title`; [ RunTime:0.0510s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','129','1458820385','操作url：/cms/yershop/index.php?s=/Admin/Attribute/remove/id/129.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:53:26+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/goods/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-24T19:54:58+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: UPDATE `yershop_model` SET `status`='1' WHERE `id` IN ('15') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:57:34+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Reserve/add.html
+ERR: 非法操作:add
+
+[ 2016-03-24T19:59:26+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0030s ]
+NOTIC: [2] call_user_func_array() expects parameter 1 to be a valid callback, function 'check_catgory_model' not found or invalid function name D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1268 行.
+SQL: INSERT INTO `yershop_document` (`title`,`cover_id`,`price`,`description`,`type`,`create_time`,`brand`,`sale`,`link_id`,`name`,`display`,`comment`,`view`,`level`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('书籍1','157','0.236','作者1出了一本书叫sh','2','1458820766','','0','0','','1','0','0','0','0','0','7','86','1','0','0','0','1458820766','3','0') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_document_book` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_document_book` (`content`,`author`,`publisher`,`publish_time`,`edition_number`,`isbn`,`parameters`,`parameters_value`,`groupprice`,`press_number`,`press_time`,`package`,`paper`,`length`,`formats`,`pages`,`pics`,`id`) VALUES ('书籍test1','作者1','出版社1','2016','第一版','01234567','','','','','0','','','','','','','90') [ RunTime:0.0000s ]
+
+[ 2016-03-24T19:59:29+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_document` SET `title`='书籍1',`cover_id`='157',`price`='0.236',`description`='作者1出了一本书叫书籍1',`type`='2',`create_time`='1458820769',`brand`='',`sale`='0',`link_id`='0',`name`='',`display`='1',`comment`='0',`view`='0',`level`='0',`pid`='0',`model_id`='7',`category_id`='86',`root`='0',`update_time`='1458820769',`status`='1',`position`='0' WHERE `id` = 90 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_document_book` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('7','1')  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_book` SET `content`='书籍test1',`author`='作者1',`publisher`='出版社1',`publish_time`='1456833480',`edition_number`='第一版',`isbn`='01234567',`parameters`='',`parameters_value`='',`groupprice`='',`press_number`='',`package`='',`paper`='',`length`='',`formats`='',`pages`='',`pics`='' WHERE `id` = 90 [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.004000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+
+[ 2016-03-24T20:09:53+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'ju' AND `id` <> '128' LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: UPDATE `yershop_category` SET `title`='橘',`name`='ju',`ismenu`='1',`allow_publish`='1',`check`='0',`type`='2',`model`='5,6',`model_sub`='5',`icon`='0',`display`='1',`sort`='0',`list_row`='10',`meta_title`='',`keywords`='',`description`='',`extend`='\"\"',`template_index`='',`template_lists`='',`template_detail`='',`template_edit`='',`pid`='57',`update_time`='1458821393',`status`='1' WHERE `id` = 128 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','128','1458821393','操作url：/cms/yershop/index.php?s=/Admin/Category/edit.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:10:03+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'ju' AND `id` <> '128' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: UPDATE `yershop_category` SET `title`='橘',`name`='ju',`ismenu`='1',`allow_publish`='1',`check`='0',`type`='2',`model`='5',`model_sub`='5',`icon`='0',`display`='1',`sort`='0',`list_row`='10',`meta_title`='',`keywords`='',`description`='',`extend`='\"\"',`template_index`='',`template_lists`='',`template_detail`='',`template_edit`='',`pid`='57',`update_time`='1458821402',`status`='1' WHERE `id` = 128 [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Runtime/Temp/cbc58bd3cdec352c980d0ad729b5c219.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','128','1458821402','操作url：/cms/yershop/index.php?s=/Admin/Category/edit.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:11:40+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: UPDATE `yershop_model` SET `status`='1' WHERE `id` IN ('15') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:12:14+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/generate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:13:54+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'limitbuying' AND `id` <> '10' LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_model` SET `name`='limitbuying',`title`='限时',`extend`='1',`field_group`='1:基础,2:扩展',`field_sort`='{\"1\":[\"3\",\"12\",\"114\",\"51\",\"118\",\"14\",\"55\",\"56\",\"10\"],\"2\":[\"49\",\"2\",\"20\",\"5\",\"19\",\"9\",\"11\",\"13\",\"17\",\"16\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+update_time:最后更新
+status:状态
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1458821634' WHERE `id` = 10 [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','10','1458821634','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:17:38+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/model/del/ids/15.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: DELETE FROM `yershop_model` WHERE ( id='15' ) [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:17:54+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yershop_model` (`name`,`title`,`extend`,`engine_type`,`need_pk`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('report','通知','1','MyISAM','1','1458821874','1458821874','1','') [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','16','1458821874','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Controller\ModelController.class.php 第 148 行.
+
+[ 2016-03-24T20:18:11+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/generate.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:18:32+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'content' AND `model_id` = 16 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('content','内容','textarea','text NOT NULL','','','','1','0','regex','','','3','function','','3','0','16','1','1458821912','1458821912') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_report'; [ RunTime:0.0010s ]
+ERR: SQLSTATE[42S21]: Column already exists: 1060 Duplicate column name 'content'
+
+[ 2016-03-24T20:18:56+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '16' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:24:24+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'cokacola' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: INSERT INTO `yershop_category` (`title`,`name`,`ismenu`,`allow_publish`,`check`,`type`,`model`,`model_sub`,`icon`,`display`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`extend`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`id`,`pid`,`create_time`,`update_time`,`status`) VALUES ('百事可乐','cokacola','1','1','0','2','5','5','160','1','0','30','','','','\"\"','','','','','0','151','1458822264','1458822264','1') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','159','1458822264','操作url：/cms/yershop/index.php?s=/Admin/Category/add.html') [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:26:02+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'yigui' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: INSERT INTO `yershop_category` (`title`,`name`,`ismenu`,`allow_publish`,`check`,`type`,`model`,`model_sub`,`icon`,`display`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`extend`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`id`,`pid`,`create_time`,`update_time`,`status`) VALUES ('衣柜','yigui','1','1','0','2','5','5','160','1','0','30','','','','\"\"','','','','','0','111','1458822362','1458822362','1') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','160','1458822362','操作url：/cms/yershop/index.php?s=/Admin/Category/add.html') [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:26:46+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: UPDATE `yershop_model` SET `status`='1' WHERE `id` IN ('16') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:27:30+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/model/setstatus/ids/16/status/0.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: UPDATE `yershop_model` SET `status`='0' WHERE `id` IN ('16') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:27:45+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '16' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_model` SET `name`='report',`title`='通知',`extend`='1',`field_group`='1:基础',`field_sort`='{\"1\":[\"132\",\"2\",\"3\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+update_time:最后更新
+status:状态
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1458822465' WHERE `id` = 16 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','16','1458822465','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:27:54+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: UPDATE `yershop_model` SET `status`='1' WHERE `id` IN ('16') [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:29:22+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'report' AND `id` <> '16' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_model` SET `name`='report',`title`='通知',`extend`='1',`field_group`='1:基础',`field_sort`='{\"1\":[\"132\",\"2\",\"3\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1458822562' WHERE `id` = 16 [ RunTime:0.0010s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','16','1458822562','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:34:04+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: lite D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0060s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','0','member','1','1458822844','yershop在2016-03-24 20:34登录了后台') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1458736444 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1458822844',`last_login_ip`='0' WHERE `uid` = 1 [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:34:24+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [8] Undefined index: lite D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','0','member','1','1458822864','yershop在2016-03-24 20:34登录了后台') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1458736464 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1458822864',`last_login_ip`='0' WHERE `uid` = 1 [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:36:32+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Article/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+
+[ 2016-03-24T20:37:56+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'report' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: INSERT INTO `yershop_category` (`title`,`name`,`ismenu`,`allow_publish`,`check`,`type`,`model`,`model_sub`,`icon`,`display`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`extend`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`id`,`pid`,`create_time`,`update_time`,`status`) VALUES ('通告','report','1','1','0','2','16','16','157','1','0','30','','','','\"\"','','','','','0','0','1458823076','1458823076','1') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','161','1458823076','操作url：/cms/yershop/index.php?s=/Admin/Category/add.html') [ RunTime:0.0000s ]
+
+[ 2016-03-24T20:38:26+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 161 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-03-24T20:39:09+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'test1' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] call_user_func_array() expects parameter 1 to be a valid callback, function 'check_catgory_model' not found or invalid function name D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1268 行.
+SQL: INSERT INTO `yershop_document` (`name`,`title`,`description`,`type`,`position`,`link_id`,`cover_id`,`display`,`view`,`comment`,`level`,`create_time`,`price`,`brand`,`sale`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`) VALUES ('test1','标题1','描述1','2','7','0','157','1','0','0','0','1458823080','0','','0','0','0','16','161','1','0','0','0','1458823149','3') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_report` [ RunTime:0.0050s ]
+SQL: INSERT INTO `yershop_document_report` (`content`,`id`) VALUES ('测试1','91') [ RunTime:0.0030s ]
+
+[ 2016-03-24T20:39:25+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '91' AND `status` <> -1 AND `category_id` = 161 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 91 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `yershop_document` SET `name`='test1',`title`='标题1',`description`='描述1',`type`='2',`position`='7',`link_id`='0',`cover_id`='157',`display`='1',`view`='0',`comment`='0',`level`='0',`create_time`='1458823080',`price`='1.20',`brand`='品牌1',`sale`='12',`pid`='0',`model_id`='16',`category_id`='161',`root`='0',`update_time`='1458823165',`status`='1' WHERE `id` = 91 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_report` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('16','1')  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_report` SET `content`='测试1' WHERE `id` = 91 [ RunTime:0.0050s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.003000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+
+[ 2016-03-24T20:41:16+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/goods/setStatus/status/1.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: UPDATE `yershop_document` SET `status`='1' WHERE `id` IN ('91') [ RunTime:0.0010s ]
+

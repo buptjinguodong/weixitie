@@ -1,0 +1,745 @@
+[ 2016-04-14T08:52:51+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: lite D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','0','member','1','1460595171','yershop在2016-04-14 08:52登录了后台') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined offset: 1 D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1460508771 LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0040s ]
+SQL: UPDATE `yershop_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1460595171',`last_login_ip`='0' WHERE `uid` = 1 [ RunTime:0.0010s ]
+
+[ 2016-04-14T08:57:44+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'wedding' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Admin\Model\ModelModel::getFields() D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 77 行.
+SQL: INSERT INTO `yershop_model` (`name`,`title`,`extend`,`engine_type`,`need_pk`,`create_time`,`update_time`,`status`,`field_sort`) VALUES ('wedding','喜帖','1','MyISAM','1','1460595464','1460595464','1','') [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\ModelModel.class.php 第 67 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','17','1460595464','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: id D:\xampp\htdocs\cms\yershop\Application\Admin\Controller\ModelController.class.php 第 148 行.
+
+[ 2016-04-14T08:59:00+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'boy_name' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('boy_name','男方姓名','string','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595540','1460595540') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0040s ]
+SQL: SELECT `engine_type`,`need_pk` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 CREATE TABLE IF NOT EXISTS `yershop_document_wedding` (
+                `id`  int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键' ,
+                `boy_name`  varchar(255) NOT NULL  COMMENT '男方姓名' ,
+                PRIMARY KEY (`id`)
+                )
+                ENGINE=MyISAM
+                DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
+                CHECKSUM=0
+                ROW_FORMAT=DYNAMIC
+                DELAY_KEY_WRITE=0
+                ; [ RunTime:0.0070s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','133','1460595540','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T08:59:35+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+
+[ 2016-04-14T08:59:44+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'girl_name' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('girl_name','女方姓名','string','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595584','1460595584') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `girl_name`  varchar(255) NOT NULL  COMMENT '女方姓名'; [ RunTime:0.0130s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','134','1460595584','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:00:36+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'main_pic' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('main_pic','封面照片','picture','int(10) UNSIGNED NOT NULL','','','封面照片','1','1','regex','','','3','function','','3','0','17','1','1460595636','1460595636') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `main_pic`  int(10) UNSIGNED NOT NULL  COMMENT '封面照片'; [ RunTime:0.0190s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','135','1460595636','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:01:54+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'abstract' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('abstract','摘要','textarea','text NOT NULL','','','双方结合在一起的爱情宣言-摘要形式','1','1','regex','','','3','function','','3','0','17','1','1460595714','1460595714') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `abstract`  text NOT NULL  COMMENT '摘要'; [ RunTime:0.0130s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','136','1460595714','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:02:18+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'boy_word' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('boy_word','男方宣言','textarea','text NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595738','1460595738') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `boy_word`  text NOT NULL  COMMENT '男方宣言'; [ RunTime:0.0120s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','137','1460595738','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:02:54+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'boy_pic' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('boy_pic','男方头像','picture','int(10) UNSIGNED NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595774','1460595774') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `boy_pic`  int(10) UNSIGNED NOT NULL  COMMENT '男方头像'; [ RunTime:0.0110s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','138','1460595773','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:03:29+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'boy_phone' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('boy_phone','男方联系方式','string','varchar(255) NOT NULL','','','','1','0','regex','','','3','function','','3','0','17','1','1460595809','1460595809') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0020s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `boy_phone`  varchar(255) NOT NULL  COMMENT '男方联系方式'; [ RunTime:0.0130s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','139','1460595809','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:03:50+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'girl_word' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('girl_word','女方宣言','textarea','text NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595830','1460595830') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `girl_word`  text NOT NULL  COMMENT '女方宣言'; [ RunTime:0.0170s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','140','1460595830','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:04:11+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'girl_pic' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('girl_pic','女方头像','picture','int(10) UNSIGNED NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595851','1460595851') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0020s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `girl_pic`  int(10) UNSIGNED NOT NULL  COMMENT '女方头像'; [ RunTime:0.0160s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','141','1460595851','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:04:37+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'girl_phone' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('girl_phone','女方联系方式','string','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595877','1460595877') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `girl_phone`  varchar(255) NOT NULL  COMMENT '女方联系方式'; [ RunTime:0.0170s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','142','1460595876','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:04:59+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_pics' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_pics','结婚照片','pictures','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595898','1460595898') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_pics`  varchar(255) NOT NULL  COMMENT '结婚照片'; [ RunTime:0.0140s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','143','1460595898','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:05:25+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_time' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_time','结婚时间','string','varchar(255) NOT NULL','','','','1','1','regex','','','3','function','','3','0','17','1','1460595925','1460595925') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0020s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_time`  varchar(255) NOT NULL  COMMENT '结婚时间'; [ RunTime:0.0160s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','144','1460595925','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:06:00+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_phone' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_phone','结婚联系方式','string','varchar(255) NOT NULL','','','请输入婚庆的对外联系方式','1','1','regex','','','3','function','','3','0','17','1','1460595960','1460595960') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_phone`  varchar(255) NOT NULL  COMMENT '结婚联系方式'; [ RunTime:0.0140s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','145','1460595960','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:07:15+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_address' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_address','结婚地点','string','varchar(255) NOT NULL','','','请输入结婚地点（XX市/省XX市/区XX地方）','1','1','regex','','','3','function','','3','0','17','1','1460596035','1460596035') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_address`  varchar(255) NOT NULL  COMMENT '结婚地点'; [ RunTime:0.0150s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','146','1460596035','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:08:24+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_movies' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_movies','结婚视频','textarea','text NOT NULL','','','请将结婚视频上传至腾讯视频，然后将视频分享链接iFrame样式的填入此项。','1','0','regex','','','3','function','','3','0','17','1','1460596104','1460596104') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_movies`  text NOT NULL  COMMENT '结婚视频'; [ RunTime:0.0130s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','147','1460596104','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:09:08+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'wedding_movie_flag' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('wedding_movie_flag','结婚视频状态','select','char(50) NOT NULL','0:无
+1:有','0','','1','0','regex','','','3','function','','3','0','17','1','1460596148','1460596148') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `wedding_movie_flag`  char(50) NOT NULL  DEFAULT 0 COMMENT '结婚视频状态'; [ RunTime:0.0170s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','148','1460596148','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:09:43+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Attribute/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_attribute` WHERE `name` = 'bless_title' AND `model_id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_attribute` (`name`,`title`,`type`,`field`,`extra`,`value`,`remark`,`is_show`,`is_must`,`validate_type`,`validate_rule`,`error_info`,`validate_time`,`auto_type`,`auto_rule`,`auto_time`,`id`,`model_id`,`status`,`create_time`,`update_time`) VALUES ('bless_title','祝福语标题','string','varchar(255) NOT NULL','','爱的祝福','','1','1','regex','','','3','function','','3','0','17','1','1460596183','1460596183') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `name`,`extend` FROM `yershop_model` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL:                 SHOW TABLES LIKE 'yershop_document_wedding'; [ RunTime:0.0010s ]
+SQL:                 ALTER TABLE `yershop_document_wedding`
+ADD COLUMN `bless_title`  varchar(255) NOT NULL  DEFAULT '爱的祝福' COMMENT '祝福语标题'; [ RunTime:0.0180s ]
+SQL: SELECT `name` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_attribute' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('8','1','0','attribute','149','1460596183','操作url：/cms/yershop/index.php?s=/Admin/Attribute/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:10:08+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'wedding' AND `id` <> '17' LIMIT 1   [ RunTime:0.0060s ]
+
+[ 2016-04-14T09:10:17+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'wedding' AND `id` <> '17' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:10:41+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'wedding' AND `id` <> '17' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_model` SET `name`='wedding',`title`='喜帖',`extend`='1',`field_group`='1:基础,2:扩展',`field_sort`='{\"1\":[\"133\",\"134\",\"135\",\"136\",\"137\",\"138\",\"139\",\"140\",\"141\",\"142\",\"143\",\"144\",\"145\",\"146\",\"147\",\"148\",\"149\",\"2\",\"3\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1460596241' WHERE `id` = 17 [ RunTime:0.0000s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0060s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','17','1460596241','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:12:27+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Model/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_model` WHERE `name` = 'wedding' AND `id` <> '17' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_model` SET `name`='wedding',`title`='喜帖',`extend`='1',`field_group`='1:基础,2:扩展',`field_sort`='{\"1\":[\"2\",\"3\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"16\",\"17\",\"19\",\"20\",\"49\",\"51\",\"55\",\"56\"],\"2\":[\"133\",\"134\",\"135\",\"136\",\"137\",\"138\",\"139\",\"140\",\"141\",\"142\",\"143\",\"144\",\"145\",\"146\",\"147\",\"148\",\"149\"]}',`list_grid`='id:编号
+title:标题:[EDIT]
+type:类型
+view:浏览
+id:操作:[EDIT]|编辑,[DELETE]|删除,[SEE]|预览',`search_key`='',`search_list`='',`template_list`='',`template_add`='',`template_edit`='',`list_row`='10',`update_time`='1460596347' WHERE `id` = 17 [ RunTime:0.0000s ]
+NOTIC: [2] unlink(./Runtime/Temp/8badceef8761e1f2fa41d8bf7e2cdf39.php): No such file or directory D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Cache\Driver\File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_model' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('7','1','0','model','17','1460596347','操作url：/cms/yershop/index.php?s=/Admin/Model/update.html') [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:20:37+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'soft_wedding' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: INSERT INTO `yershop_category` (`title`,`name`,`ismenu`,`allow_publish`,`check`,`model`,`model_sub`,`icon`,`display`,`sort`,`list_row`,`meta_title`,`keywords`,`description`,`extend`,`template_index`,`template_lists`,`template_detail`,`template_edit`,`id`,`pid`,`create_time`,`update_time`,`status`) VALUES ('微喜帖','soft_wedding','1','2','0','17','17','0','1','0','30','','','','\"\"','','','','','0','0','1460596837','1460596837','1') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','162','1460596837','操作url：/cms/yershop/index.php?s=/Admin/Category/add.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:21:36+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:22:10+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yershop_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id`,`title`,`url` FROM `yershop_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `yershop_menu` WHERE ( pid !=0 AND url like '%Article/autoSave%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `yershop_menu` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yershop_menu` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT DISTINCT  `group` FROM `yershop_menu` WHERE `group` <> '' AND `pid` = 2  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`url` FROM `yershop_menu` WHERE `pid` = 2 AND `hide` = 0  [ RunTime:0.0000s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `yershop_menu` WHERE `group` = '内容' AND `pid` = 2 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'test1' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:22:45+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:03+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:09+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0150s ]
+
+[ 2016-04-14T09:23:10+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'test1' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:13+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:17+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:43+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test2' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:23:49+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'test2' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:24:10+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'test' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:24:27+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:25:01+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:26:05+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+
+[ 2016-04-14T09:26:11+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0030s ]
+
+[ 2016-04-14T09:26:42+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:27:04+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'wedding1' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:28:05+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'wedding1' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:28:47+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_document` (`title`,`price`,`cover_id`,`brand`,`sale`,`description`,`percent`,`type`,`create_time`,`link_id`,`name`,`display`,`comment`,`view`,`level`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('112','0','0','','0','','','2','1460597326','0','','1','0','0','0','0','0','5','120','1','0','0','0','1460597326','1','0') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_product` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('5','1')  [ RunTime:0.0010s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: INSERT INTO `yershop_document_product` (`content`,`stock`,`area`,`parameters`,`parameters_value`,`groupprice`,`shorttitle`,`ads_pic_id`,`pics`,`unionid`,`marketprice`,`mark`,`id`) VALUES ('1234','10','中国大陆','','','','','0','','','1.00','','93') [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.003001s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'add_document' LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:29:56+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:30:07+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:30:13+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'wedding1' LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2016-04-14T09:33:21+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/article/autoSave.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_document` WHERE `name` = 'wedding1' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:37:09+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Category/edit.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_category` WHERE `name` = 'soft_wedding' AND `id` <> '162' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+SQL: UPDATE `yershop_category` SET `title`='微喜帖',`name`='soft_wedding',`ismenu`='1',`allow_publish`='2',`check`='0',`type`='2,1,3',`model`='17',`model_sub`='17',`icon`='165',`display`='1',`sort`='0',`list_row`='30',`meta_title`='',`keywords`='',`description`='',`extend`='\"\"',`template_index`='',`template_lists`='',`template_detail`='',`template_edit`='',`pid`='0',`update_time`='1460597829',`status`='1' WHERE `id` = 162 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'update_category' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0040s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('11','1','0','category','162','1460597829','操作url：/cms/yershop/index.php?s=/Admin/Category/edit.html') [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:37:50+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_document` (`name`,`title`,`description`,`type`,`link_id`,`cover_id`,`display`,`view`,`comment`,`level`,`create_time`,`price`,`brand`,`sale`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('wedding1','wedding1','wedding1','2','0','0','1','0','0','0','1460597870','0','','0','0','0','17','162','1','0','0','0','1460597870','1','0') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_document_wedding` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('17','1')  [ RunTime:0.0020s ]
+SQL: DELETE FROM `yershop_document` WHERE `id` = 94 [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:38:03+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0050s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_document` (`name`,`title`,`description`,`type`,`link_id`,`cover_id`,`display`,`view`,`comment`,`level`,`create_time`,`price`,`brand`,`sale`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('wedding1','wedding1','wedding1','2','0','0','1','0','0','0','1460597882','0','','0','0','0','17','162','1','0','0','0','1460597882','1','0') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_wedding` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('17','1')  [ RunTime:0.0020s ]
+SQL: DELETE FROM `yershop_document` WHERE `id` = 95 [ RunTime:0.0000s ]
+
+[ 2016-04-14T09:38:31+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `yershop_document` (`name`,`title`,`description`,`type`,`link_id`,`cover_id`,`display`,`view`,`comment`,`level`,`create_time`,`price`,`brand`,`sale`,`id`,`pid`,`model_id`,`category_id`,`uid`,`root`,`attach`,`extend`,`update_time`,`status`,`position`) VALUES ('wedding1','wedding1','wedding1','2','0','0','1','0','0','0','1460597910','0','','0','0','0','17','162','1','0','0','0','1460597910','1','0') [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_wedding` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('17','1')  [ RunTime:0.0020s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: INSERT INTO `yershop_document_wedding` (`boy_name`,`girl_name`,`main_pic`,`abstract`,`boy_word`,`boy_pic`,`boy_phone`,`girl_word`,`girl_pic`,`girl_phone`,`wedding_pics`,`wedding_time`,`wedding_phone`,`wedding_address`,`wedding_movies`,`wedding_movie_flag`,`bless_title`,`id`) VALUES ('wedding1','wedding1','161','wedding1','wedding1','162','wedding1','wedding1','163','wedding1','164','wedding1','wedding1','wedding1','wedding1','0','爱的祝福','96') [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.004000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'add_document' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-04-14T09:39:35+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '96' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 96 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_document` SET `name`='wedding1',`title`='婚庆1',`description`='婚庆1',`type`='2',`link_id`='0',`cover_id`='165',`display`='1',`deadline`='1472169600',`view`='2',`comment`='0',`level`='0',`create_time`='1460597880',`price`='0.00',`brand`='GGUO',`sale`='0',`pid`='0',`model_id`='17',`category_id`='162',`root`='0',`update_time`='1460597975',`status`='1',`position`='0' WHERE `id` = 96 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_wedding` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0050s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0050s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('17','1')  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_wedding` SET `boy_name`='wedding1',`girl_name`='wedding1',`main_pic`='161',`abstract`='wedding1',`boy_word`='wedding1',`boy_pic`='162',`boy_phone`='wedding1',`girl_word`='wedding1',`girl_pic`='163',`girl_phone`='wedding1',`wedding_pics`='164',`wedding_time`='wedding1',`wedding_phone`='wedding1',`wedding_address`='wedding1',`wedding_movies`='wedding1',`wedding_movie_flag`='0',`bless_title`='爱的祝福' WHERE `id` = 96 [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.004000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.005000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+
+[ 2016-04-14T09:59:03+08:00 ] ::1 /cms/yershop/index.php?s=/Admin/Goods/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT `id` FROM `yershop_document` WHERE `name` = 'wedding1' AND `id` <> '96' AND `status` <> -1 AND `category_id` = 162 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `status` FROM `yershop_document` WHERE `id` = 96 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `yershop_document` SET `name`='wedding1',`title`='婚庆1',`description`='婚庆1',`type`='2',`link_id`='0',`cover_id`='165',`display`='1',`deadline`='1472169600',`view`='2',`comment`='0',`level`='0',`create_time`='1460597880',`price`='0.00',`brand`='GGUO',`sale`='0',`pid`='0',`model_id`='17',`category_id`='162',`root`='0',`update_time`='1460599142',`status`='1',`position`='0' WHERE `id` = 96 [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document_wedding` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0040s ]
+SQL: SELECT `extend` FROM `yershop_model` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_attribute` [ RunTime:0.0040s ]
+SQL: SELECT `id`,`name`,`title`,`field`,`type`,`value`,`remark`,`is_show`,`extra`,`model_id`,`is_must`,`status`,`update_time`,`create_time`,`validate_rule`,`validate_time`,`error_info`,`validate_type`,`auto_rule`,`auto_time`,`auto_type` FROM `yershop_attribute` WHERE `model_id` IN ('17','1')  [ RunTime:0.0020s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 115 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 122 行.
+NOTIC: [8] Undefined variable: arr D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\xampp\htdocs\cms\yershop\Application\Common\Common\function.php 第 123 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+NOTIC: [2] strtotime() expects at least 1 parameter, 0 given D:\xampp\htdocs\cms\yershop\ThinkPHP\Library\Think\Model.class.php 第 1147 行.
+SQL: UPDATE `yershop_document_wedding` SET `boy_name`='男1',`girl_name`='女1',`main_pic`='161',`abstract`='方结合在一起的爱情宣言-摘要形式',`boy_word`='Boy宣言',`boy_pic`='162',`boy_phone`='男Phone',`girl_word`='女word',`girl_pic`='163',`girl_phone`='女Phone',`wedding_pics`='164',`wedding_time`='结婚Time',`wedding_phone`='结婚Phone',`wedding_address`='结婚address',`wedding_movies`='视频Movie',`wedding_movie_flag`='0',`bless_title`='爱的祝福' WHERE `id` = 96 [ RunTime:0.0010s ]
+INFO: [ documentSaveComplete ] --START--
+INFO: Run Addons\Attachment\AttachmentAddon [ RunTime:0.003000s ]
+INFO: [ documentSaveComplete ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8] Undefined variable: id D:\xampp\htdocs\cms\yershop\Application\Admin\Model\DocumentModel.class.php 第 126 行.
+

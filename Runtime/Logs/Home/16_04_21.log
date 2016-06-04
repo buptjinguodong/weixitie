@@ -1,0 +1,12 @@
+[ 2016-04-21T17:04:20+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Wedding/reply.html
+ERR: 参数错误或者未定义:article_id
+
+[ 2016-04-21T17:05:53+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Wedding/reply.html
+ERR: 参数错误或者未定义:article_id
+
+[ 2016-04-21T17:05:54+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Wedding/reply.html
+ERR: 参数错误或者未定义:article_id
+
+[ 2016-04-21T17:06:14+08:00 ] ::1 /cms/yershop/index.php?s=/Home/Wedding/reply.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yershop.yershop_wedding_reply' doesn't exist
+
