@@ -5,9 +5,9 @@
 		</script><?php break;?>
 	<?php case "2": ?>
 		<input type="hidden" name="parse" value="0">
-		<?php if(($addons_config["editor_wysiwyg"]) == "1"): ?><link rel="stylesheet" href="/cms/yershop/Public/static/kindeditor/default/default.css" />
-			<script charset="utf-8" src="/cms/yershop/Public/static/kindeditor/kindeditor-min.js"></script>
-			<script charset="utf-8" src="/cms/yershop/Public/static/kindeditor/zh_CN.js"></script>
+		<?php if(($addons_config["editor_wysiwyg"]) == "1"): ?><link rel="stylesheet" href="/git/weixitie/Public/static/kindeditor/default/default.css" />
+			<script charset="utf-8" src="/git/weixitie/Public/static/kindeditor/kindeditor-min.js"></script>
+			<script charset="utf-8" src="/git/weixitie/Public/static/kindeditor/zh_CN.js"></script>
 			<script type="text/javascript">
 				var editor_<?php echo ($addons_data["name"]); ?>;
 				KindEditor.ready(function(K) {
@@ -41,12 +41,12 @@
 			</script>
 
 		<?php else: ?>
-			<script type="text/javascript" charset="utf-8" src="/cms/yershop/Public/static/ueditor/ueditor.config.js"></script>
-			<script type="text/javascript" charset="utf-8" src="/cms/yershop/Public/static/ueditor/ueditor.all.js"></script>
-			<script type="text/javascript" charset="utf-8" src="/cms/yershop/Public/static/ueditor/lang/zh-cn/zh-cn.js"></script>
+			<script type="text/javascript" charset="utf-8" src="/git/weixitie/Public/static/ueditor/ueditor.config.js"></script>
+			<script type="text/javascript" charset="utf-8" src="/git/weixitie/Public/static/ueditor/ueditor.all.js"></script>
+			<script type="text/javascript" charset="utf-8" src="/git/weixitie/Public/static/ueditor/lang/zh-cn/zh-cn.js"></script>
 			<script type="text/javascript">
 				$('textarea[name="<?php echo ($addons_data["name"]); ?>"]').attr('id', 'editor_id_<?php echo ($addons_data["name"]); ?>');
-				window.UEDITOR_HOME_URL = "/cms/yershop/Public/static/ueditor";
+				window.UEDITOR_HOME_URL = "/git/weixitie/Public/static/ueditor";
 				window.UEDITOR_CONFIG.initialFrameHeight = parseInt('<?php echo ($addons_config["editor_height"]); ?>');
 				window.UEDITOR_CONFIG.scaleEnabled = <?php if(($addons_config["editor_resize_type"]) == "1"): ?>true<?php else: ?>false<?php endif; ?>;
 				window.UEDITOR_CONFIG.imageUrl = '<?php echo addons_url("EditorForAdmin://Upload/ue_upimg");?>';
@@ -55,10 +55,10 @@
 				UE.getEditor('editor_id_<?php echo ($addons_data["name"]); ?>');
 			</script><?php endif; break;?>
 	<?php case "3": ?>
-		<script type="text/javascript" src="/cms/yershop/Public/static/jquery-migrate-1.2.1.min.js"></script>
-		<script charset="utf-8" src="/cms/yershop/Public/static/xheditor/xheditor-1.2.1.min.js"></script>
-		<script charset="utf-8" src="/cms/yershop/Public/static/xheditor/xheditor_lang/zh-cn.js"></script>
-		<script type="text/javascript" src="/cms/yershop/Public/static/xheditor/xheditor_plugins/ubb.js"></script>
+		<script type="text/javascript" src="/git/weixitie/Public/static/jquery-migrate-1.2.1.min.js"></script>
+		<script charset="utf-8" src="/git/weixitie/Public/static/xheditor/xheditor-1.2.1.min.js"></script>
+		<script charset="utf-8" src="/git/weixitie/Public/static/xheditor/xheditor_lang/zh-cn.js"></script>
+		<script type="text/javascript" src="/git/weixitie/Public/static/xheditor/xheditor_plugins/ubb.js"></script>
 		<script type="text/javascript">
 		var submitForm = function (){
 			$('textarea[name="<?php echo ($addons_data["name"]); ?>"]').closest('form').submit();
@@ -77,9 +77,9 @@
 		</script>
 		<input type="hidden" name="parse" value="1"><?php break;?>
 	<?php case "4": ?>
-		<link rel="stylesheet" href="/cms/yershop/Public/static/thinkeditor/skin/default/style.css">
-		<script type="text/javascript" src="/cms/yershop/Public/static/jquery-migrate-1.2.1.min.js"></script>
-		<script type="text/javascript" src="/cms/yershop/Public/static/thinkeditor/jquery.thinkeditor.js"></script>
+		<link rel="stylesheet" href="/git/weixitie/Public/static/thinkeditor/skin/default/style.css">
+		<script type="text/javascript" src="/git/weixitie/Public/static/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="/git/weixitie/Public/static/thinkeditor/jquery.thinkeditor.js"></script>
 		<script type="text/javascript">
 			$(function(){
 				$('textarea[name="<?php echo ($addons_data["name"]); ?>"]').attr('id', 'editor_id_<?php echo ($addons_data["name"]); ?>');

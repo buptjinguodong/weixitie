@@ -4,13 +4,15 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 	<title><?php echo ($meta_title); ?>_<?php echo C('WEB_SITE_TITLE');?></title>
 	
-	<link href="/cms/yershop/Public/Home/js/pro/wedding-detail1/detail1.css" rel="stylesheet">
+	<link href="/git/weixitie/Public/Home/js/pro/wedding-detail1/detail1.css" rel="stylesheet">
 
-	<script type="text/javascript" src="/cms/yershop/Public/Home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/git/weixitie/Public/Home/js/jquery.min.js"></script>
 	
-	<script type="text/javascript" src="/cms/yershop/Public/Home/js/pro/wedding-detail1/detail1.js" ></script>
+	<script type="text/javascript" src="/git/weixitie/Public/Home/js/validate.js" ></script>
+	<script type="text/javascript" src="/git/weixitie/Public/Home/js/pro/wedding-detail1/detail1.js" ></script>
 
-	<script src="/cms/yershop/Public/Home/js/pro/touchswipe_1.6.js"></script>
+
+	<script src="/git/weixitie/Public/Home/js/pro/touchswipe_1.6.js"></script>
 
 </head>
 <body>
@@ -26,7 +28,6 @@
 	    <div id="home_bk">
 	        <div id="home_img_wrapper">
 	            <div id="home_img">
-	                
 	            </div>
 	            <div id="home_boy_name">
 	            <?php echo ($info["boy_name"]); ?>
@@ -77,15 +78,13 @@
 			        </div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
 	    </div>
 	    <div id="wadding_pics_big">
-	    	
 	   		<?php $pics= explode(',',$info['wedding_pics']); ?>
-
 			<div class="pic_big_wrapper">
 				<div class="pic_big_mask"></div>
 			<?php if(!empty($pics)): if(is_array($pics)): $i = 0; $__LIST__ = $pics;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><div class="wadding_pic_big">
 			                <img class="pic_big" _src="<?php echo (get_cover($v,'path')); ?>" />
 			            </div><?php endforeach; endif; else: echo "" ;endif; endif; ?>
-        	</div>  
+        	</div>
 	    </div>
 	    <div class="clear"></div>
 	    <div id="wedding_info">
@@ -120,7 +119,7 @@
 	        <div class="bless_content">
 	            为了方便统计整理婚宴自理啊为了方便统计整理婚宴自理啊为了方便统计整理婚宴自理啊为了方便统计整理婚宴自理啊为了方便统计整理婚宴自理啊
 	        </div>
-	        <form id="visitor" method="post" action="<?php echo U('Home/Wedding/reply');?>">
+	        <form id="visitor" name="visitor" method="post" onsubmit="submit_form(this.id);return false;" action="<?php echo U('Home/Wedding/reply');?>">
 	            <input name="article_id" id="article_id" value="<?php echo ($info["id"]); ?>" type="hidden" />
 	            <div class="input-group">
 	                <label for="name">
@@ -128,7 +127,6 @@
 	                </label>
 	                <input name="name" id="name" type="text">
 	            </div>
-	            
 	            <div class="input-group">
 	                <label for="willing">
 	                您会来参加我们的婚宴吗?
@@ -141,7 +139,6 @@
 	                <label for="willing_2">不，我最近时间比较紧。</label>
 	                <div class="split_line"></div>
 	            </div>
-	            
 	            <div class="input-group">
 	                <label for="tel_num">
 	                请留下您的手机号码：
@@ -149,7 +146,6 @@
 	                <input name="tel_num" id="tel_num" type="text">
 	                <div class="split_line"></div>
 	            </div>
-	            
 	            <div class="input-group">
 	                <label for="bless">
 	                您对我们的祝福：
@@ -163,7 +159,7 @@
 	    </div>
 	    <div class="clear"></div>
 	    <div id="public_account">
-	        <img src="/cms/yershop/Public/Home/images/img/weixinweixitie.jpg">
+	        <img src="/git/weixitie/Public/Home/images/img/weixinweixitie.jpg">
 	    </div>
 	    <div class="clear"></div>
 	    <div id="public_account_focus">
@@ -173,6 +169,48 @@
 	</div>
 
 	<script>
+		var validate_form = function(form_id){
+			var validator = new FormValidator(form_id, [{
+			    name: 'article_id',
+			    rules: 'required'
+			}, {
+			    name: 'name',
+			    display: 'required',
+			    rules: 'required'
+			}, {
+			    name: 'willing',
+			    rules: 'required'
+			}, {
+			    name: 'tel_num',
+			    rules: 'required'
+			}, {
+			    name: 'bless',
+			    rules: 'required'
+			}], function(errors) {
+			    if (errors.length > 0) {
+			        // Show the errors
+			    }
+			});
+		};
+		var submit_form = function(form_id){
+			// validate_form(form_id);
+			
+			var _form = $("#"+form_id);
+			jQuery.ajax({
+				url: _form.attr("action"),
+				data: _form.serialize(),
+				type: _form.attr("method"),
+				beforeSend: function(){
+					console.log("submit form: "+ form_id);
+				},
+				success: function(){
+					alert("发送成功");
+				}
+			});
+			return false;
+		};
+
+
 		var height = $(window).height();
 		$("#wrapper").css("height",height);
 		$(".page").css('top',height);
@@ -192,7 +230,6 @@
 					$(this).css("width", "100%");
 				}
 			});
-			
 			$("img.pic_big").load(function(){
 				var tem_h = $("#div1").height(); // 获取屏幕高度
 				var tem_w = $("#div1").width();
@@ -205,7 +242,7 @@
 
 					var b_h = (tem_w*tem_pic_h)/tem_pic_w;
 					// console.log(b_h + " : " + tem_h + " : " + tem_pic_h);
-					$(this).css("top", (tem_h - b_h)/2+"px");		
+					$(this).css("top", (tem_h - b_h)/2+"px");
 				}else{
 					$(this).css("height", "100%");
 					$(this).css("width", "auto");

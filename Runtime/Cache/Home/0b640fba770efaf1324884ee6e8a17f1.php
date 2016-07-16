@@ -4,7 +4,7 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
 	<title><?php echo ($meta_title); ?>_<?php echo C('WEB_SITE_TITLE');?></title>
 	
-	<link href="/cms/yershop/Public/Home/js/pro/wedding-detail1/detail1.css" rel="stylesheet">
+	<link href="/git/weixitie/Public/Home/js/pro/wedding-detail1/detail1.css" rel="stylesheet">
 	<style>
 		.Qcontainer {
 			height: 100%;
@@ -83,11 +83,11 @@
 		}
 	</style>
 
-	<script type="text/javascript" src="/cms/yershop/Public/Home/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/git/weixitie/Public/Home/js/jquery.min.js"></script>
 	
-	<script type="text/javascript" src="/cms/yershop/Public/Home/js/pro/wedding-detail1/detail1.js" ></script>
+	<script type="text/javascript" src="/git/weixitie/Public/Home/js/pro/wedding-detail1/detail1.js" ></script>
 
-	<script src="/cms/yershop/Public/Home/js/pro/touchswipe_1.6.js"></script>
+	<script src="/git/weixitie/Public/Home/js/pro/touchswipe_1.6.js"></script>
 
 </head>
 <body>
@@ -96,7 +96,7 @@
 	<section class="Qcontainer">
 		<div class="film">
 			<div class="face font">
-				<img src="/cms/yershop/Public/Home/images/img/weixinweixitie.jpg" alt+"The Goonies" />
+				<img src="/git/weixitie/Public/Home/images/img/weixinweixitie.jpg" alt+"The Goonies" />
 			</div>
 			<div class="face back">
 				<h5>Hot!</h5>

@@ -15,13 +15,25 @@ use Think\Page;
  */
 class WeddingInfoModel extends Model{
 
+    /**
+        create table WeddingInfo(
+            id int(32) auto increment,
+            article_id int(32),
+            name varchar(40),
+            willing varchar(8),
+            tel_num varchar(20),
+            bless varchar(512),
+            create_time timestamp,
+            update_time timestamp,
+            primary key id
+        )
+    */
+
     /* 自动验证规则 */
     protected $_validate = array(
-        
         array('article_id', 'require', '文档ID不能为空', self::VALUE_VALIDATE, 'regex', self::MODEL_BOTH),
         array('category_id', 'require', '分类不能为空', self::MUST_VALIDATE , 'regex', self::MODEL_INSERT),
         array('category_id', 'require', '分类不能为空', self::EXISTS_VALIDATE , 'regex', self::MODEL_UPDATE),
-       
         array('category_id', 'check_category', '该分类不允许发布内容', self::EXISTS_VALIDATE , 'function', self::MODEL_BOTH),
         array('model_id,category_id,pid', 'check_category_model', '该分类没有绑定当前模型', self::MUST_VALIDATE , 'function', self::MODEL_INSERT),
     );

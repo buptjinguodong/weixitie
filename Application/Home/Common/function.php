@@ -13,6 +13,15 @@
  */
 
 /**
+ * Ajax请求成功返回函数
+ */
+function ajax_success($msg="请求成功"){
+    $str = "{status:0, message:'"+ $msg + "'}";
+    echo $str;
+}
+
+
+/**
  * 检测验证码
  * @param  integer $id 验证码ID
  * @return boolean     检测结果

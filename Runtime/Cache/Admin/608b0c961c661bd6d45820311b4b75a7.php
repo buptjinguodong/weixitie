@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo ($meta_title); ?>|yershop管理平台</title>
-    <link href="/cms/yershop/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
-    <link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/base.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/common.css" media="all">
-    <link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/module.css">
-   <?php if(isset($cate_rows)): ?><link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/style.css" media="all"><?php else: ?> <link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/style-default.css" media="all"><?php endif; ?>  
-	<link rel="stylesheet" type="text/css" href="/cms/yershop/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
+    <link href="/git/weixitie/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/module.css">
+   <?php if(isset($cate_rows)): ?><link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/style.css" media="all"><?php else: ?> <link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/style-default.css" media="all"><?php endif; ?>  
+	<link rel="stylesheet" type="text/css" href="/git/weixitie/Public/Admin/css/<?php echo (C("COLOR_STYLE")); ?>.css" media="all">
      <!--[if lt IE 9]>
-    <script type="text/javascript" src="/cms/yershop/Public/static/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/git/weixitie/Public/static/jquery-1.10.2.min.js"></script>
     <![endif]--><!--[if gte IE 9]><!-->
-    <script type="text/javascript" src="/cms/yershop/Public/static/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="/cms/yershop/Public/Admin/js/jquery.mousewheel.js"></script>
- <script type="text/javascript" src="/cms/yershop/Public/Admin/js/highcharts.js"></script>
-<script type="text/javascript" src="/cms/yershop/Public/Admin/js/exporting.js"></script>
-<script type="text/javascript" src="/cms/yershop/Public/Admin/js/data.js"></script>
+    <script type="text/javascript" src="/git/weixitie/Public/static/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="/git/weixitie/Public/Admin/js/jquery.mousewheel.js"></script>
+ <script type="text/javascript" src="/git/weixitie/Public/Admin/js/highcharts.js"></script>
+<script type="text/javascript" src="/git/weixitie/Public/Admin/js/exporting.js"></script>
+<script type="text/javascript" src="/git/weixitie/Public/Admin/js/data.js"></script>
     <!--<![endif]-->
     
 </head>
@@ -24,7 +24,7 @@
     <!-- 头部 -->
     <div class="header">
         <!-- Logo -->
-        <span class="logo"><img src="/cms/yershop/Public/Admin/images/logo.png"></span>
+        <span class="logo"><img src="/git/weixitie/Public/Admin/images/logo.png"></span>
         <!-- /Logo -->
 
         <!-- 主导航 -->
@@ -135,8 +135,8 @@
             
 
             
-	<script type="text/javascript" src="/cms/yershop/Public/static/uploadify/jquery.uploadify.min.js"></script>
-	<script type="text/javascript" src="/cms/yershop/Public/static/UploadImages.js"></script>
+	<script type="text/javascript" src="/git/weixitie/Public/static/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" src="/git/weixitie/Public/static/UploadImages.js"></script>
 <div class="main-title cf">
 		<h2>
 			编辑<?php echo (get_document_model($data["model_id"],'title')); ?> [
@@ -175,7 +175,7 @@
         /* 初始化上传插件*/
         $("#upload_picture_<?php echo ($field["name"]); ?>").uploadify({
             "height"          : 30,
-            "swf"             : "/cms/yershop/Public/static/uploadify/uploadify.swf",
+            "swf"             : "/git/weixitie/Public/static/uploadify/uploadify.swf",
             "fileObjName"     : "download",
             "buttonText"      : "上传图片",
             "uploader"        : "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
@@ -193,7 +193,7 @@
         var data = $.parseJSON(data);
         var src = '';
         if(data.status){
-            src = data.url || '/cms/yershop' + data.path;
+            src = data.url || '/git/weixitie' + data.path;
             upload_img = "<div class='upload-pre-item'><img src=" + src +" title='点击显示大图' data-id="+data.id+"> <span class='btn-close btn-close-<?php echo ($field["name"]); ?>' title='删除图片' onclick='del(event);'></span></div>";
             picsbox = $("#upload_picture_<?php echo ($field["name"]); ?>").siblings('.upload-img-box');
             picsbox.append(upload_img)
@@ -267,7 +267,7 @@ $obj.parents(".upload-pre-item").remove();
 							    /* 初始化上传插件 */
 								$("#upload_picture_<?php echo ($field["name"]); ?>").uploadify({
 							        "height"          : 30,
-							        "swf"             : "/cms/yershop/Public/static/uploadify/uploadify.swf",
+							        "swf"             : "/git/weixitie/Public/static/uploadify/uploadify.swf",
 							        "fileObjName"     : "download",
 							        "buttonText"      : "上传图片",
 							        "uploader"        : "<?php echo U('File/uploadPicture',array('session_id'=>session_id()));?>",
@@ -284,7 +284,7 @@ $obj.parents(".upload-pre-item").remove();
 							    	var src = '';
 							        if(data.status){
 							        	$("#cover_id_<?php echo ($field["name"]); ?>").val(data.id);
-							        	src = data.url || '/cms/yershop' + data.path
+							        	src = data.url || '/git/weixitie' + data.path
 							        	$("#cover_id_<?php echo ($field["name"]); ?>").parent().find('.upload-img-box').html(
 							        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
 							        	);
@@ -309,7 +309,7 @@ $obj.parents(".upload-pre-item").remove();
 							    /* 初始化上传插件 */
 								$("#upload_file_<?php echo ($field["name"]); ?>").uploadify({
 							        "height"          : 30,
-							        "swf"             : "/cms/yershop/Public/static/uploadify/uploadify.swf",
+							        "swf"             : "/git/weixitie/Public/static/uploadify/uploadify.swf",
 							        "fileObjName"     : "download",
 							        "buttonText"      : "上传附件",
 							        "uploader"        : "<?php echo U('File/upload',array('session_id'=>session_id()));?>",
@@ -370,18 +370,18 @@ $obj.parents(".upload-pre-item").remove();
     <script type="text/javascript">
     (function(){
         var ThinkPHP = window.Think = {
-            "ROOT"   : "/cms/yershop", //当前网站地址
-            "APP"    : "/cms/yershop/index.php?s=", //当前项目地址
-            "PUBLIC" : "/cms/yershop/Public", //项目公共目录地址
+            "ROOT"   : "/git/weixitie", //当前网站地址
+            "APP"    : "/git/weixitie/index.php?s=", //当前项目地址
+            "PUBLIC" : "/git/weixitie/Public", //项目公共目录地址
             "DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
             "MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
             "VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
         }
     })();
     </script>
-    <script type="text/javascript" src="/cms/yershop/Public/static/think.js"></script>
+    <script type="text/javascript" src="/git/weixitie/Public/static/think.js"></script>
 
-    <script type="text/javascript" src="/cms/yershop/Public/Admin/js/common.js"></script>
+    <script type="text/javascript" src="/git/weixitie/Public/Admin/js/common.js"></script>
     <script type="text/javascript">
         +function(){
             var $window = $(window), $subnav = $("#subnav"), url;
@@ -453,11 +453,11 @@ $obj.parents(".upload-pre-item").remove();
         }();
     </script>
     
-<link href="/cms/yershop/Public/static/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
-<?php if(C('COLOR_STYLE')=='blue_color') echo '<link href="/cms/yershop/Public/static/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">'; ?>
-<link href="/cms/yershop/Public/static/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="/cms/yershop/Public/static/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="/cms/yershop/Public/static/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<link href="/git/weixitie/Public/static/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<?php if(C('COLOR_STYLE')=='blue_color') echo '<link href="/git/weixitie/Public/static/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">'; ?>
+<link href="/git/weixitie/Public/static/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/git/weixitie/Public/static/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="/git/weixitie/Public/static/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
 <script type="text/javascript">
 
 Think.setValue("type", <?php echo ((isset($data["type"]) && ($data["type"] !== ""))?($data["type"]):'""'); ?>);
