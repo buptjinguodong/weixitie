@@ -1,0 +1,224 @@
+<extend name="Base/wedding"/>
+<block name="body">
+	<h3>祝福墙</h3>
+	<ul>
+		<li><span>祝福</span><span>红包</span></li>
+	</ul>
+	<div>
+		<form id="bless_form" method="post" action="{:U('Home/Wedding/blessWall')}">
+			<input id="article_id" name="article_id" type="text" hidden="hidden" value="{$info.id}" />
+			<div>
+				<label for="bless_name">姓名：</label><input id="bless_name" name="bless_name" type="text" value="" required />
+			</div>
+			<div>
+				<label for="bless_word">祝福语：</label>
+				<input id="bless_word" name="bless_word" type="text" list="word_list" value="" required placeholder="请输入祝福语" />
+				<datalist id="word_list">
+					<select>
+							<option value="恭喜发财"></option>
+							<option value="早生贵子"></option>
+							<option value="哈哈哈哈"></option>
+							<option value=""></option>
+							
+						</select>
+				</datalist>
+			</div>
+			<div id="bless_face">
+				表情包
+			</div>
+			<div>
+				<label for="bless_gift">
+					<input id="bless_gift" name="bless_gift" type="text" list="gift_list" />
+					<datalist id="gift_list">
+						<select>
+							<option value="1"></option>
+							<option value="2"></option>
+							<option value="3"></option>
+							<option value="4"></option>
+							
+						</select>
+					</datalist>
+				</label>
+
+			</div>
+
+			<div>
+				<input id="bless_submit" name="bless_submit" type="submit" value="提交" />
+			</div>
+		</form>
+	</div>
+	<div style="position:absolute;top:0px;left:400px">
+		<h3>祝福弹幕</h3>
+		<div id="bless_barrage"style="position:absolute;width:600px;height:480px;display:none">
+			<ul id="bless_barrage_ul" _id="{$info.id}" _method="get" _action="{:U('Home/Wedding/blessWallGetListByIdInc')}" >
+			</ul>
+		</div>
+		<div id="bless_danmu">
+
+		</div>
+		<div id="bless_barrage_second">
+		</div>
+	</div>
+	<div>
+		<h3>祝福浏览区</h3>
+		<ul>
+			<li>
+				<span>图片</span><span>姓名</span><span>祝福语</span><span>时间</span>
+			</li>
+		</ul>
+		<ul id="bless_panel" _id="{$info.id}" _method="get" _action="{:U('Home/Wedding/blessWallGetListByIdDesc')}">
+		</ul>
+		<span id="more_bless">更多祝福</span>
+	</div>
+	<script>
+		//视频弹幕获取
+		var init_min_num = 0;
+		var option_min = function(){
+			var ul_id="bless_barrage_ul";
+			var res_option = {
+				data:{
+					article_id: $("#"+ul_id).attr("_id"),
+					// page: 0,
+					min_num: init_min_num,
+					count: 10
+				},
+				success: function(data){
+					testData = data;
+					if(data.status=="false"){
+						// alert(data.message);
+						return false;
+					}
+					if(!Fun.isObjectUsable(data) && !Fun.isObjectUsable(data.blessWall) && data.blessWall.length<1){
+						alert("no more");
+						return false;
+					}
+					var html="";
+					for(var i in data.blessWall){
+						var ele = data.blessWall[i];
+						html += "<li><span>图片</span><span>"+ele.bless_name+"</span><span>"+ele.bless_word+"</span><span>"+Fun.getLocaleByTimestamp(ele.update_time)+"</span><span>"+ele.id+"</span></li>";
+						res_option.data.min_num = data.blessWall[i].id; //实时更新回复项的最小ID
+						var _danmu = {
+							text: ele.bless_name+":"+ele.bless_word,
+							color: "#red",
+							size: 1,
+							position: 0,
+							time: $("#bless_danmu").data("nowtime") + 10,
+							isnew: ""
+						};
+						$("#bless_danmu").danmu("add_danmu", _danmu);
+					}
+					$("#"+ul_id).append(html);
+				}
+			};
+			return res_option;
+		}();
+		var update_bless_barrage = function(ul_id){
+			Fun.listAjaxGet(ul_id,option_min);
+		};
+		setInterval(function(){
+			update_bless_barrage("bless_barrage_ul");
+		}, 1000);
+
+		$("#bless_form").submit(function(){
+			var _formid = $(this).attr("id");
+			var option = {
+				success: function(data){
+					testData = data;
+					if(data.status == "ok"){
+						var option = {
+							data:{
+								article_id: $("#bless_panel").attr("_id"),
+								// page: 0,
+								max_num:init_max_num,
+								count: 1
+							},
+							success: function(data){
+								testData = data;
+								if(!Fun.isObjectUsable(data) && !Fun.isObjectUsable(data.blessWall) && data.blessWall.length<1){
+									alert("data of blessWall fetch error");
+									return false;
+								}
+								var html="";
+								for(var i in data.blessWall){
+									var ele = data.blessWall[i];
+									html += "<li><span>图片</span><span>"+ele.bless_name+"</span><span>"+ele.bless_word+"</span><span>"+Fun.getLocaleByTimestamp(ele.update_time)+"</span></li>";
+								}
+								$("#bless_panel").prepend(html);
+							}
+						};
+						Fun.listAjaxGet("bless_panel",option);
+					}else{
+						alert(data.message);
+					}
+				}
+			};
+			Fun.formAjaxSubmit(_formid, option);
+			return false;
+		});
+		var init_max_num = 20000000;
+		var option = {
+			data:{
+				article_id: $("#bless_panel").attr("_id"),
+				// page: 0,
+				max_num: init_max_num,
+				count: 10
+			},
+			success: function(data){
+				testData = data;
+				if(data.status=="false"){
+					alert(data.message);
+					return false;
+				}
+				if(!Fun.isObjectUsable(data) && !Fun.isObjectUsable(data.blessWall) && data.blessWall.length<1){
+					alert("no more");
+					return false;
+				}
+				var html="";
+				for(var i in data.blessWall){
+					var ele = data.blessWall[i];
+					html += "<li><span>图片</span><span>"+ele.bless_name+"</span><span>"+ele.bless_word+"</span><span>"+Fun.getLocaleByTimestamp(ele.update_time)+"</span><span>"+ele.id+"</span></li>";
+					option.data.max_num = data.blessWall[i].id; //实时更新回复项的最小ID
+				}
+				$("#bless_panel").append(html);
+			}
+		};
+		$(function(){
+			Fun.listAjaxGet("bless_panel",option);
+		});
+		testOption = option;
+		$("#more_bless").click(function(){
+			// option.data.page = option.data.page + 1;
+			Fun.listAjaxGet("bless_panel",option);
+		});
+
+		$(function(){
+			$("#bless_danmu").danmu({
+				left: 0,    //区域的起始位置x坐标
+				top: 0 ,  //区域的起始位置y坐标
+				height: 360, //区域的高度 
+				width: 640, //区域的宽度 
+				zindex :100, //div的css样式zindex
+				speed:20000, //弹幕速度，飞过区域的毫秒数 
+				sumtime:9000 , //弹幕运行总时间
+				danmuss:{}, //danmuss对象，运行时的弹幕内容 
+				default_font_color:"#FFFFFF", //弹幕默认字体颜色 
+				font_size_small:16, //小号弹幕的字体大小,注意此属性值只能是整数
+				font_size_big:24, //大号弹幕的字体大小
+				opacity:"0.9", //弹幕默认透明度
+				top_botton_danmu_time:6000 //顶端底端弹幕持续时间 
+			});
+			$('#bless_danmu').danmu('danmu_start');
+
+			
+			// $('#bless_danmu').danmu("add_danmu");
+		});
+		
+
+	</script>
+</block>
+
+<block name="test1">
+	<div id="test_wrapper">
+		{$info|dump}
+	</div>
+</block>
