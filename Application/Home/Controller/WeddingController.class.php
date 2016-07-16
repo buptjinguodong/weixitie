@@ -17,7 +17,8 @@ class WeddingController extends HomeController {
 		if(IS_POST){
 			// do post thing
 			$weddingInfo = M("WeddingInfo");
-			$isExist = $this->isExist($weddingInfo, $article_id)
+			// $isExist = $this->isExist($weddingInfo, $article_id);
+
 			$data = [];
 			$data['article_id'] = $article_id;
 			$data['name'] = $name;
@@ -31,12 +32,20 @@ class WeddingController extends HomeController {
 			}
 			if($result){
 				// 如果主键是自动增长型 成功后返回值就是最新插入的值
-				echo time();
-				echo $result;
+				ajax_success("发送成功");
 
 			}
-			
 		}
 	}
-	
+
+	public function isExist($weddingInfo, $article_id){
+		$res = $weddingInfo.where(array('article_id' => $article_id)).find();
+		if($res == false){
+			throw("weddingInfo SQL Query error!");
+		}
+		if($res == null){
+			// 不存在词aiticle_id
+
+		}
+	}
 }
